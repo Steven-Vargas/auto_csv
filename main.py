@@ -9,20 +9,36 @@ def main():
                                  quoting=csv.QUOTE_MINIMAL)
 
         column_headers = [
-            "Column1",
-            "Column2",
-            "Column3"
+            "title",
+            "agency",
+            "required_report_name",
+            "subject",
+            "description",
+            "date_published",
+            "report_type",
+            "language",
+            "fiscal_year",
+            "file"
         ]
 
         file_writer.writerow(column_headers)
 
+        file_ext = ".pdf"
         # Write test row data for desired row count
-        for num in range(1, 101):
+        for num in range(1, 26):
             row_data = [
-                "Column1 Data",
-                "Columns2 Data",
-                # Include sequential row count in column
-                f"Column3_{num}"
+                f"This is test bulk import work #{num}",
+                "Doris",
+                "Not Required",
+                "Accesibility",
+                "Lorem ipsum dolor sit amet. Qui vero dignissimos et esse adipisci et adipisci optio et officia dolor "
+                "et fuga itaque est fugiat dolores ad distinctio sunt. Vel soluta iusto et eveniet ipsam ut officiis "
+                "expedita est autem quia aut quisquam perferendis id doloremque tenetur.",
+                "2022-11-10",
+                "Brochures",
+                "English",
+                "2022",
+                f"file_{num}{file_ext}"
             ]
             file_writer.writerow(row_data)
 
